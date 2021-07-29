@@ -11,6 +11,12 @@ class Post extends Model
 
     protected $guarded = ['id'];
 
+    protected $dates = [
+        'created_at',
+    ];
+
+    protected $with = ['category', 'author'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
